@@ -1,0 +1,2 @@
+io.benchmarks.MyBenchmark.testMethod===,===io.benchmarks.generated.MyBenchmark_testMethod.testMethod===,===AverageTime===,===1====,===[]===,===[2]===,===[]===,===[]===,===[5]===,===[]===,===[]===,===[1]===,===[]===,===[]===,===[]===,===[]===,===[]===,===[]===,===[NANOSECONDS]===,===[]===,===[]
+io.swarm.MyBenchmark.testMethod===,===io.swarm.generated.MyBenchmark_testMethod.testMethod===,===AverageTime===,===1====,===[]===,===[2]===,===[]===,===[]===,===[5]===,===[]===,===[]===,===[1]===,===[]===,===[]===,===[]===,===[]===,===[]===,===[]===,===[NANOSECONDS]===,===[]===,===[]
