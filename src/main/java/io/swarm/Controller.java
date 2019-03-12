@@ -1,20 +1,31 @@
 package io.swarm;
 
+import io.helpers.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import io.helpers.Tagger;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import org.openjdk.jmh.annotations.Fork;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
     private Image original;
-    private WritableImage grayscale;
+    private WritableImage grayScale;
 
     private DisjointSet set;
     private double height;
@@ -29,6 +40,7 @@ public class Controller implements Initializable {
 //        size.setMax(1);
 //        size.setValue(0);
 //        sizeListener();
+
         this.open();
     }
 
@@ -65,7 +77,10 @@ public class Controller implements Initializable {
 //        FileChooser fileChooser = new FileChooser();
 //        fileChooser.setTitle("Open image");
 //        File file = fileChooser.showOpenDialog(null);
-        File file = new File("./resources/assets/s.png");
+        File file = new File("./resources/assets/flock-of-birds.jpg");
+//        File file = new File("./resources/assets/v.jpg");
+//        File file = new File("./resources/assets/Birds.jpg");
+//        File file = new File("./resources/assets/s.png");
         if (file != null) {
 
             original = new Image(file.toURI().toString(), image.getFitWidth(), image.getFitHeight(), true, false);
@@ -78,76 +93,54 @@ public class Controller implements Initializable {
             set = new DisjointSet((int) width,(int) height);
 
             this.filter();
-            this.image.setImage(grayscale);
+            this.image.setImage(grayScale);
             this.count();
             this.drawSquares();
 
-//            this.reduceNoise();
-//            this.generateSets();
-//
-//            System.out.println("Number of birds: " + set.filterOutliers());
-//            System.out.println("Average bird size: " + set.getAverage());
-//
-//            this.drawSquares();
+            tryRegression();
+
         }
     }
 
     @FXML
     public void filter() {
-        PixelReader reader = original.getPixelReader();
-
-        grayscale = new WritableImage((int) this.width, (int) this.height);
-        PixelWriter writer = grayscale.getPixelWriter();
-
-        for(int y=0; y < height ; y++) {
-            for(int x = 0; x < width; x++) {
-                Color color = this.filterImage(x, y, reader, writer);
-                this.initialiseDisjointSet(x, y, color);
-            }
-        }
-
+        this.grayScale = ImageHandler.filter(original, grayScale, set);
     }
 
-    private void initialiseDisjointSet(int x, int y, Color color) {
-        double lum = color.getBrightness() * 100;
-        int value= (lum <= 50) ? set.getRootValue(1) : -1;
-        this.set.setValue(x + (int) width * y, value);
-    }
 
-    private Color filterImage(int x, int y, PixelReader reader, PixelWriter writer) {
-        Color color = reader.getColor(x, y);
-        double lum = color.getBrightness() * 100;
-        Color newColor = lum <= 50 ? Color.BLACK : Color.WHITE;
-        writer.setColor(x,y, newColor);
-        return newColor;
-    }
-
-    private void generateSets() {
-        for(int index = 0; index < this.set.getSize(); index++) {
-            int right = index + 1;
-            int down = index + (int) width;
-
-            if(this.set.getValue(index) != -1) {
-                if(right < this.set.getSize() - 1 && this.set.getValue(right) != -1)
-                    set.quickUnion(index, right);
-                if(down < this.set.getSize() - 1 && this.set.getValue(down) != -1)
-                    set.quickUnion(index, down);
-            }
-
-        }
-    }
 
     @FXML
     public void count() {
-        this.generateSets();
-        set.filterOutliers();
-//        System.out.println(set.filterOutliers());
+        SetHandler.createSets(this.set, (int) width);
+        System.out.println(set.countSets());
     }
 
     @FXML
     public void drawSquares() {
-        (new Tagger(this.set, this.width, this.image, this.grayscale, this.stack)).tagImage();
+        (new Tagger(this.set, this.width, this.image, this.stack)).tagImage();
     }
 
+    public void tryRegression() {
+
+        Pane pane = new Pane();
+
+        FlockRegression flock = new FlockRegression(set, (int) width, (int) height);
+
+        RegressionAnalysis overall = flock.overAllRegression();
+
+        System.out.println(overall.getRSquared());
+
+        ArrayList<Line> lines = flock.compareSegments();
+
+        if(!lines.isEmpty()) {
+            pane.getChildren().addAll(lines);
+
+            pane.setMaxSize(width, height);
+            pane.setClip(new Rectangle(width, height));
+
+            stack.getChildren().add(pane);
+        }
+
+    }
 
 }

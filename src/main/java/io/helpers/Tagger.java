@@ -4,7 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -16,41 +15,36 @@ import java.util.ArrayList;
 public class Tagger {
 
     private  StackPane stack;
-    private  WritableImage grayscale;
     private ImageView image;
     private double imageWidth;
     private DisjointSet set;
     private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
 
-    public Tagger(DisjointSet set, double imageWidth, ImageView image, WritableImage grayscale, StackPane stack) {
+    public Tagger(DisjointSet set, double imageWidth, ImageView image, StackPane stack) {
         this.set = set;
         this.imageWidth = imageWidth;
         this.image = image;
-        this.grayscale = grayscale;
         this.stack = stack;
     }
 
     public void tagImage() {
-
         int count = 1;
         for(int rootIndex : this.set.getRootIndices()) {
-
-            int[] birdBounds = getCoordinates(rootIndex);
-
-            setClusterBounbaries(rootIndex, birdBounds);
-
-            int clusterSize = set.getTreeSize(set.getValue(rootIndex));
-            double average = set.getAverage();
-            double diffFromAverage = set.diffFromAverage(average, clusterSize);
-            clusterSize = (diffFromAverage > 0.75) ? (int) (clusterSize/average) : 1;
-            String clusterNumber = getClusterNumber(count, clusterSize);
-            count = count + clusterSize;
-
-
-            rectangles.add(buildRectangle(birdBounds, clusterNumber));
+            int clusterSize = getClusterWeight(rootIndex);
+            if(clusterSize != 0) {
+                int[] birdBounds = getCoordinates(rootIndex);
+                setClusterBounbaries(rootIndex, birdBounds);
+                String clusterNumber = getClusterNumber(count, clusterSize);
+                count = count + clusterSize;
+                rectangles.add(buildRectangle(birdBounds, clusterNumber));
+            }
         }
-
         addSquaresToWindow(rectangles);
+    }
+
+    private int getClusterWeight(int index) {
+        int size = set.clusterSize(set.getValue(index));
+        return set.getStatistics().weight(size);
     }
 
     private void setClusterBounbaries(int rootIndex, int[] birdBounds) {
@@ -105,7 +99,6 @@ public class Tagger {
 
         str.append("Birds: ");
 
-        System.out.println(count + " | " + clusterSize);
         for(int i = count; i < count + clusterSize; i++) {
             if(i != (count + clusterSize) - 1)
                 str.append(i).append(", ");

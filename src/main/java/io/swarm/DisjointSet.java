@@ -1,19 +1,23 @@
 package io.swarm;
 
+import io.helpers.ClusterAnalysis;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DisjointSet {
 
     private int[] set;
     private int height, width;
-    private Double average;
     private ArrayList<Integer> roots;
+    private double[][] rootCooirdinates;
+    private ClusterAnalysis statistics;
 
     public DisjointSet(int width, int height) {
         this.width = width;
         this.height = height;
         this.set = new int[width * height];
-        roots = new ArrayList<Integer>();
+        roots = new ArrayList<>();
     }
 
     public DisjointSet(double width, double height) {
@@ -28,8 +32,9 @@ public class DisjointSet {
      * @return average cluster size
      */
     public double getAverage() {
-        if(this.average == null) calculateAverage();
-        return this.average;
+        if(roots.isEmpty()) gatherRoots();
+        if(statistics == null) statistics = new ClusterAnalysis(getSerializedClusterSizes());
+        return statistics.mean();
     }
 
     /**
@@ -49,7 +54,7 @@ public class DisjointSet {
      * @return true or false
      */
     public boolean isRoot(int index) {
-        int value = (index > 0) ? this.set[index] : index;
+        int value = (index >= 0) ? this.set[index] : index;
         if(value == -1) return false;
         return Math.abs((value >> 31)) == 1;
     }
@@ -75,7 +80,7 @@ public class DisjointSet {
         int rootB = find(b);
 
         if(rootA != rootB) {
-            int size = getTreeSize(this.set[rootA]) + getTreeSize(this.set[rootB]);
+            int size = clusterSize(this.set[rootA]) + clusterSize(this.set[rootB]);
             this.setValue(rootB, rootA);
             this.setValue(rootA, this.getRootValue(size));
         }
@@ -88,7 +93,7 @@ public class DisjointSet {
      * @param value the root element
      * @return the size of the cluster
      */
-    public int getTreeSize(int value) {
+    public int clusterSize(int value) {
         return value & 0xFFFF;
     }
 
@@ -117,65 +122,40 @@ public class DisjointSet {
      *
      * @return the number of sets
      */
-    public int countSets() {
-        int count = 0;
+    public void gatherRoots() {
         for(int i = 0; i < this.getSize(); i++)
-            if(this.isRoot(i)) count++;
-        return count;
+            if(this.isRoot(i)) roots.add(i);
     }
 
-    /**
-     * Calculates the difference of the cluster size from the mean cluster size
-     *
-     * @param average the mean cluster size of clusters in the disjont set
-     * @param size the size of the current cluster
-     * @return the difference from the mean
-     */
-    public double diffFromAverage(double average, int size) {
-        return (size - average) / size;
+    public int countSets() {
+        gatherRoots();
+        return noiseReducedCount();
     }
 
     /**
      * Count the clusters in the union, but filter
      * the outliers from the set
      *
-     * @return number of clusters after outliers have been filtered
      */
-    public int filterOutliers() {
+    public int noiseReducedCount() {
+        if(statistics == null) statistics = new ClusterAnalysis(getSerializedClusterSizes());
+        if(roots.isEmpty()) gatherRoots();
+
+        ArrayList<Integer> toRemove = new ArrayList<>();
+
         int count = 0;
-        double average = this.getAverage();
-        for(int i = 0; i < this.getSize(); i++) {
-            if(this.isRoot(i)){
-                int size = this.getTreeSize(this.set[i]);
-                double diffFromAverage = diffFromAverage(average, this.getTreeSize(this.set[i]));
-                if(diffFromAverage > 0.75) {
-                    count += size / average;
-                    this.roots.add(i);
-                }
-                if(diffFromAverage > -0.75 && diffFromAverage < 0.75) {
-                    count++;
-                    this.roots.add(i);
-                }
-            }
+
+        for(Integer index : roots) {
+            int size = clusterSize(getValue(index));
+            double z = statistics.normalise(size);
+            int weight = statistics.weight(size);
+            if(weight == 0) toRemove.add(index);
+            if(weight != 0) count = count + weight;
         }
+
+        roots.removeAll(toRemove);
         return count;
-    }
 
-    /**
-     * Calculate the mean cluster size
-     *
-     */
-    public void calculateAverage() {
-        int birdSize = 0;
-
-        for(int i = 0; i < this.getSize(); i++) {
-            if(this.isRoot(i)) {
-                int size = getTreeSize(this.set[i]);
-                birdSize = birdSize + size;
-            }
-        }
-
-        this.average = (double) birdSize / this.countSets();
     }
 
     /**
@@ -196,6 +176,19 @@ public class DisjointSet {
      */
     public ArrayList<Integer> getRootIndices() {
         return this.roots;
+    }
+
+    public double[] getSerializedClusterSizes() {
+
+            ArrayList<Double> clusters = new ArrayList<>();
+            Double[] serialisedClusters = new Double[this.roots.size()];
+
+            for(int index: roots) {
+                double size = this.clusterSize(getValue(index));
+                clusters.add(size);
+            }
+
+            return Arrays.stream(clusters.toArray(serialisedClusters)).mapToDouble(Double::doubleValue).toArray();
     }
 
     /**
@@ -222,5 +215,16 @@ public class DisjointSet {
         return str;
     }
 
+    public ClusterAnalysis getStatistics() {
+        return statistics;
+    }
+
+    public int getWidth() {
+        return this.width;
+    }
+
+    public void replaceSet(int[] array) {
+        if(array.length == set.length) this.set = array;
+    }
 }
 

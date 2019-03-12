@@ -98,6 +98,12 @@ THE POSSIBILITY OF SUCH DAMAGE.
             <artifactId>ikonli-fontawesome-pack</artifactId>
             <version>11.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -115,8 +121,8 @@ THE POSSIBILITY OF SUCH DAMAGE.
                 <version>3.1</version>
                 <configuration>
                     <compilerVersion>${javac.target}</compilerVersion>
-                    <source>${javac.target}</source>
-                    <target>${javac.target}</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -196,5 +202,4 @@ THE POSSIBILITY OF SUCH DAMAGE.
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
