@@ -4,6 +4,8 @@ import javafx.stage.Stage;
 
 public interface Switchable {
 
-    void setStage(Stage stage);
+    void quit();
+
+    void construct(Stage stage, DisjointSet set, DisjointImage disjointImage);
 
 }

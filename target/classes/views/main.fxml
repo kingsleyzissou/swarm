@@ -15,6 +15,7 @@
 
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.swarm.Controller">
     <top>
         <JFXToolbar maxHeight="100.0" minHeight="100.0" style="-fx-background-color: #263238;">
@@ -30,9 +31,9 @@
             </center>
             <right>
                 <JFXButton onMouseClicked="#quit" style="-fx-background-color: #263238;" text=" " BorderPane.alignment="CENTER">
-                    <!--<graphic>-->
-                        <!--<FontIcon iconColor="WHITE" iconLiteral="fa-sign-out" iconSize="24" selectionEnd="0" textAlignment="CENTER" />-->
-                    <!--</graphic>-->
+                    <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-sign-out" iconSize="24" selectionEnd="0" textAlignment="CENTER" />
+                    </graphic>
                 </JFXButton>
             </right>
         </JFXToolbar>
@@ -40,51 +41,47 @@
     <center>
         <BorderPane fx:id="borderPane">
             <center>
-                <!--<VBox alignment="CENTER" maxHeight="200.0" maxWidth="400.0" BorderPane.alignment="CENTER">-->
-                <!--<children>-->
-                <!--<HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="200.0">-->
-                <!--<children>-->
-                <!--<Label text="CHOOSE FILE TO" textFill="#263238">-->
-                <!--<font>-->
-                <!--<Font size="18.0" />-->
-                <!--</font>-->
-                <!--</Label>-->
-                <!--</children>-->
-                <!--</HBox>-->
-                <!--<HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">-->
-                <!--<children>-->
-                <!--<Label text="GET STARTED" textFill="#263238">-->
-                <!--<font>-->
-                <!--<Font size="36.0" />-->
-                <!--</font>-->
-                <!--</Label>-->
-                <!--</children>-->
-                <!--</HBox>-->
-                <!--<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">-->
-                <!--<children>-->
-                <!--<JFXButton onMouseClicked="#open" contentDisplay="CENTER" graphicTextGap="20.0" style="-fx-background-color: #263238;" text="." textAlignment="RIGHT" textFill="WHITE">-->
-                <!--<graphic>-->
-                <!--<FontIcon iconColor="WHITE" iconLiteral="fa-upload" iconSize="48" selectionEnd="0" textAlignment="CENTER" />-->
-                <!--</graphic>-->
-                <!--<font>-->
-                <!--<Font size="24.0" />-->
-                <!--</font>-->
-                <!--<padding>-->
-                <!--<Insets bottom="20.0" left="60.0" right="60.0" top="20.0" />-->
-                <!--</padding>-->
-                <!--</JFXButton>-->
-                <!--</children>-->
-                <!--<padding>-->
-                <!--<Insets top="20.0" />-->
-                <!--</padding>-->
-                <!--</HBox>-->
-                <!--</children>-->
-                <StackPane fx:id="stack" alignment="CENTER" prefHeight="600.0" prefWidth="800.0">
+                <VBox alignment="CENTER" maxHeight="200.0" maxWidth="400.0" BorderPane.alignment="CENTER">
                     <children>
-                        <ImageView fx:id="image" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="200.0">
+                            <children>
+                                <Label text="CHOOSE FILE TO" textFill="#263238">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                            <children>
+                                <Label text="GET STARTED" textFill="#263238">
+                                    <font>
+                                        <Font size="36.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <JFXButton onMouseClicked="#open" contentDisplay="CENTER" graphicTextGap="20.0" style="-fx-background-color: #263238;" text="." textAlignment="RIGHT" textFill="WHITE">
+                                    <graphic>
+                                        <FontIcon iconColor="WHITE" iconLiteral="fa-upload" iconSize="48" selectionEnd="0" textAlignment="CENTER" />
+                                    </graphic>
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="20.0" left="60.0" right="60.0" top="20.0" />
+                                    </padding>
+                                </JFXButton>
+                            </children>
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
+                        </HBox>
                     </children>
-                </StackPane>
-                <!--</VBox>-->
+
+                </VBox>
             </center>
             <!--<center>-->
 

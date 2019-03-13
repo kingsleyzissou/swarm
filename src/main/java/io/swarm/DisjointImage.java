@@ -59,4 +59,8 @@ public class DisjointImage {
         return this.height;
     }
 
+    public Image getOriginalImage() {
+        return original;
+    }
+
 }

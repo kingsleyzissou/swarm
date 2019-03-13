@@ -45,7 +45,7 @@
                     <children>
                         <Label text="Step Two: Grayscale" textFill="#263238">
                             <font>
-                                <Font size="24.0" />
+                                <Font size="18.0" />
                             </font>
                         </Label>
                     </children>

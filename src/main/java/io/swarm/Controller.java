@@ -7,8 +7,8 @@ import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-//import org.openjdk.jmh.annotations.Fork;
 
 import java.io.*;
 import java.net.URL;
@@ -31,13 +31,12 @@ public class Controller implements Initializable, Switchable {
 //        size.setValue(0);
 //        sizeListener();
 
-        this.open();
+//        this.open();
     }
 
     @FXML
-    public void quit() {
-        stage.setScene(Main.getScenes().get(SceneName.SCENE1).getScene());
-//        System.exit(0);
+    public void quit(){
+        System.exit(0);
     }
 
 //    private void sizeListener() {
@@ -52,39 +51,40 @@ public class Controller implements Initializable, Switchable {
 //                w = width / (1 + Math.abs(new_val.doubleValue()));
 //            }
 //
-//            resizeImage(h, w, image);
+//            resizeImage(h, w, disjointImage);
 ////            resizeImage(h, w, gray);
 //        });
 //    }
 
-//    private void resizeImage(double height, double width, ImageView image) {
-//        image.setFitHeight(height);
-//        image.setFitWidth(width);
-//        image.setPreserveRatio(true);
+//    private void resizeImage(double height, double width, ImageView disjointImage) {
+//        disjointImage.setFitHeight(height);
+//        disjointImage.setFitWidth(width);
+//        disjointImage.setPreserveRatio(true);
 //    }
 
     @FXML
-    public void open() {
+    public void open() throws IOException {
 
-//        FileChooser fileChooser = new FileChooser();
-//        fileChooser.setTitle("Open image");
-//        File file = fileChooser.showOpenDialog(null);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open disjointImage");
+        File file = fileChooser.showOpenDialog(null);
 //        File file = new File("./resources/assets/flock-of-birds.jpg");
 //        File file = new File("./resources/assets/v.jpg");
-        File file = new File("./src/main/resources/assets/Birds.jpg");
+//        File file = new File("./src/main/resources/assets/Birds.jpg");
 //        File file = new File("./resources/assets/s.png");
         if (file != null) {
             String fileToString = file.toURI().toString();
-            Image img = new Image(fileToString, image.getFitWidth(), image.getFitHeight(),
-                    true, false);
+            Image img = new Image(fileToString, 400, 300,true, false);
             set = new DisjointSet((int) img.getWidth(), (int) img.getHeight());
             disjointImage = new DisjointImage(img, set);
-            image.setImage(img);
+            SceneWrapper scene = Main.scenes.get(SceneName.ONE);
+            stage.setScene(scene.loadScene(set, disjointImage));
 
-            this.filter();
-            this.image.setImage(disjointImage.filter());
-            this.count();
-            this.drawSquares();
+
+//            this.filter();
+//            this.disjointImage.setImage(disjointImage.filter());
+//            this.count();
+//            this.drawSquares();
 
 //            try {
 //                save();
@@ -93,7 +93,7 @@ public class Controller implements Initializable, Switchable {
 //                System.exit(0);
 //            }
 
-            tryRegression();
+//            tryRegression();
 
         }
     }
@@ -147,7 +147,7 @@ public class Controller implements Initializable, Switchable {
     }
 
     @Override
-    public void setStage(Stage stage) {
+    public void construct(Stage stage, DisjointSet set, DisjointImage disjointImage) {
         this.stage = stage;
     }
 

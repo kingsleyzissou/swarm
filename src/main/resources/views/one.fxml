@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.image.ImageView?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.swarm.SceneTwo">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.swarm.SceneOne">
     <top>
         <JFXToolbar maxHeight="100.0" minHeight="100.0" style="-fx-background-color: #263238;">
             <center>
@@ -43,7 +43,7 @@
             <top>
                 <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="200.0">
                     <children>
-                        <Label text="Step Two: Grayscale" textFill="#263238">
+                        <Label text="Step One: Image" textFill="#263238">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -71,7 +71,7 @@
                     <children>
                         <BorderPane prefHeight="83.0" prefWidth="370.0" GridPane.columnIndex="1">
                             <right>
-                                <JFXButton onMouseClicked="#count" style="-fx-background-color: #263238;" text="Count" textFill="WHITE" BorderPane.alignment="CENTER" />
+                                <JFXButton onMouseClicked="#filter" style="-fx-background-color: #263238;" text="Filter" textFill="WHITE" BorderPane.alignment="CENTER" />
                             </right>
                             <left>
                                 <JFXButton onMouseClicked="#back" style="-fx-background-color: #263238;" text="Back" textFill="WHITE" BorderPane.alignment="CENTER" />

@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SceneTwo implements Switchable {
+public class SceneOne implements Switchable {
 
     Stage stage;
     DisjointSet set;
@@ -24,18 +24,18 @@ public class SceneTwo implements Switchable {
         this.stage = stage;
         this.set = set;
         this.disjointImage = disjointImage;
-        image.setImage(disjointImage.filter());
+        image.setImage(disjointImage.getOriginalImage());
     }
 
     @FXML
     public void back() throws IOException {
-        SceneWrapper scene = Main.scenes.get(SceneName.ONE);
+        SceneWrapper scene = Main.scenes.get(SceneName.MAIN);
         stage.setScene(scene.loadScene(null, null));
     }
 
     @FXML
-    public void count() throws IOException {
-        SceneWrapper scene = Main.scenes.get(SceneName.THREE);
+    public void filter() throws IOException {
+        SceneWrapper scene = Main.scenes.get(SceneName.TWO);
         stage.setScene(scene.loadScene(set, disjointImage));
     }
 
