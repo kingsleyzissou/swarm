@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2ec8f-f3cd-4c85-aad8-a52f6fbd26a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/assets/geese.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/images.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/images.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/QuickUnionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/CompilerHints" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/CompilerHints" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/assets/images.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/MyBenchmark.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/MyBenchmark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_jmh_B3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/MyBenchmark.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_testMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/benchmarks/generated/MyBenchmark_testMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/Tagger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/helpers/Tagger.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swarm/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/DisjointSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swarm/DisjointSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swarm/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/openjdk/jmh/infra/generated/Blackhole_jmh_B3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_testMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_testMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/BenchmarkList" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/BenchmarkList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/CompilerHints" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/CompilerHints" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/swarm/DisjointSetTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="83" column="27" lean-forward="true" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+            <state relative-caret-position="102">
+              <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2962#2963#0" expanded="true" />
@@ -55,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="736">
-              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,48 +55,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ImageHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="52" column="1" lean-forward="true" selection-start-line="19" selection-end-line="52" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1046#1047#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/FlockRegression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-448">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state relative-caret-position="353">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,14 +67,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetTest.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BenchmarkTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+            <state relative-caret-position="92">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#841#842#0" expanded="true" />
+                <element signature="e#871#872#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,6 +128,7 @@
       <find>syst</find>
       <find>system.out</find>
       <find>system</find>
+      <find>benchmark</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,11 +157,17 @@
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/ImageTest.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/QuickUnionTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/junit/DisjointSetFindTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/benchmarks/JavaFXTestRunner.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/BenchmarkTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java" />
       </list>
     </option>
   </component>
@@ -265,16 +247,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -314,15 +287,21 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/assets" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/io/swarm" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.swarm" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.benchmarks" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,22 +316,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QuickUnionTest.mergingAdjacentElementsHalvesCount">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.swarm.Main" />
-      <module name="app" />
-      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/lib/javafx-sdk-11.0.2/lib --add-modules=javafx.controls,javafx.fxml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.benchmarks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuickUnionTest.disjointSetWithNRootsHasCountN" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BenchmarkTest">
+    <configuration name="BenchmarkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -361,75 +326,79 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="io.swarm" />
-      <option name="MAIN_CLASS_NAME" value="io.swarm.QuickUnionTest" />
-      <option name="METHOD_NAME" value="disjointSetWithNRootsHasCountN" />
+      <option name="MAIN_CLASS_NAME" value="io.swarm.BenchmarkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DisjointSetFindTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.swarm.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.swarm.junit" />
+      <option name="MAIN_CLASS_NAME" value="io.swarm.junit.DisjointSetFindTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DisjointSetFindTest.disjointSetHasFourClusters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.swarm.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.swarm.junit" />
+      <option name="MAIN_CLASS_NAME" value="io.swarm.junit.DisjointSetFindTest" />
+      <option name="METHOD_NAME" value="disjointSetHasFourClusters" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickUnionTest.mergingAdjacentElementsHalvesCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DisjointSetFindTest.lastElementHasRootThree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
+          <option name="PATTERN" value="io.swarm.junit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="io.swarm" />
-      <option name="MAIN_CLASS_NAME" value="io.swarm.QuickUnionTest" />
-      <option name="METHOD_NAME" value="mergingAdjacentElementsHalvesCount" />
+      <option name="PACKAGE_NAME" value="io.swarm.junit" />
+      <option name="MAIN_CLASS_NAME" value="io.swarm.junit.DisjointSetFindTest" />
+      <option name="METHOD_NAME" value="lastElementHasRootThree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuickUnionTest.mergingFirstTwoElementsReducesCountByOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyBenchmark" type="jmh-id" factoryName="Jmh" temporary="true" program-parameters="io.benchmarks.MyBenchmark.*" working-dir="$PROJECT_DIR$" benchmark-type="CLASS" benchmark-class="io.benchmarks.MyBenchmark">
       <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.swarm" />
-      <option name="MAIN_CLASS_NAME" value="io.swarm.QuickUnionTest" />
-      <option name="METHOD_NAME" value="mergingFirstTwoElementsReducesCountByOne" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuickUnionTest.mergingLastTwoElementsReducesCountByOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.swarm" />
-      <option name="MAIN_CLASS_NAME" value="io.swarm.QuickUnionTest" />
-      <option name="METHOD_NAME" value="mergingLastTwoElementsReducesCountByOne" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.QuickUnionTest.disjointSetWithNRootsHasCountN" />
-      <item itemvalue="JUnit.QuickUnionTest.mergingFirstTwoElementsReducesCountByOne" />
-      <item itemvalue="JUnit.QuickUnionTest.mergingLastTwoElementsReducesCountByOne" />
-      <item itemvalue="JUnit.QuickUnionTest.mergingAdjacentElementsHalvesCount" />
+      <item itemvalue="JUnit.DisjointSetFindTest" />
+      <item itemvalue="JUnit.DisjointSetFindTest.lastElementHasRootThree" />
+      <item itemvalue="JUnit.DisjointSetFindTest.disjointSetHasFourClusters" />
+      <item itemvalue="Jmh.MyBenchmark" />
+      <item itemvalue="JUnit.BenchmarkTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QuickUnionTest.mergingAdjacentElementsHalvesCount" />
-        <item itemvalue="JUnit.QuickUnionTest.mergingLastTwoElementsReducesCountByOne" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.QuickUnionTest.mergingFirstTwoElementsReducesCountByOne" />
-        <item itemvalue="JUnit.QuickUnionTest.disjointSetWithNRootsHasCountN" />
+        <item itemvalue="JUnit.BenchmarkTest" />
+        <item itemvalue="Jmh.MyBenchmark" />
+        <item itemvalue="JUnit.DisjointSetFindTest.disjointSetHasFourClusters" />
+        <item itemvalue="JUnit.DisjointSetFindTest.lastElementHasRootThree" />
+        <item itemvalue="JUnit.DisjointSetFindTest" />
       </list>
     </recent_temporary>
   </component>
@@ -445,29 +414,11 @@
       <updated>1551975317875</updated>
       <workItem from="1551975321733" duration="33420000" />
       <workItem from="1552306685840" duration="13242000" />
-      <workItem from="1552392377671" duration="4756000" />
+      <workItem from="1552392377671" duration="7837000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DisjointSetTest_disjointSetWithNRootsHasCountN - 2019.03.12 at 14h 28m 01s.xml">
-      <configuration name="DisjointSetTest.disjointSetWithNRootsHasCountN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisjointSetTest_disjointSetWithNRootsHasCountN - 2019.03.12 at 14h 28m 35s.xml">
-      <configuration name="DisjointSetTest.disjointSetWithNRootsHasCountN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisjointSetTest_disjointSetWithNRootsHasCountN - 2019.03.12 at 14h 28m 49s.xml">
-      <configuration name="DisjointSetTest.disjointSetWithNRootsHasCountN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisjointSetTest_disjointSetWithNRootsHasCountN - 2019.03.12 at 14h 29m 16s.xml">
-      <configuration name="DisjointSetTest.disjointSetWithNRootsHasCountN" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisjointSetTest_mergingFirstTwoElementsReducesCountByOne - 2019.03.12 at 14h 30m 15s.xml">
-      <configuration name="DisjointSetTest.mergingFirstTwoElementsReducesCountByOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DisjointSetTest_mergingFirstTwoElementsReducesCountByOne - 2019.03.12 at 14h 30m 50s.xml">
-      <configuration name="DisjointSetTest.mergingFirstTwoElementsReducesCountByOne" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DisjointSetTest_mergingLastTwoElementsReducesCountByOne - 2019.03.12 at 14h 34m 37s.xml">
       <configuration name="DisjointSetTest.mergingLastTwoElementsReducesCountByOne" configurationId="JUnit" />
     </history-entry>
@@ -480,18 +431,35 @@
     <history-entry file="DisjointSetTest_mergingAdjacentElementsHalvesCount - 2019.03.12 at 14h 37m 13s.xml">
       <configuration name="DisjointSetTest.mergingAdjacentElementsHalvesCount" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DisjointSetTest_mergingAdjacentElementsHalvesCount - 2019.03.12 at 14h 37m 22s.xml">
+      <configuration name="DisjointSetTest.mergingAdjacentElementsHalvesCount" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DisjointSetFindTest - 2019.03.12 at 14h 46m 17s.xml">
+      <configuration name="DisjointSetFindTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DisjointSetFindTest_lastElementHasRootThree - 2019.03.12 at 14h 46m 36s.xml">
+      <configuration name="DisjointSetFindTest.lastElementHasRootThree" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DisjointSetFindTest_disjointSetHasFourClusters - 2019.03.12 at 14h 47m 14s.xml">
+      <configuration name="DisjointSetFindTest.disjointSetHasFourClusters" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BenchmarkTest - 2019.03.12 at 17h 00m 59s.xml">
+      <configuration name="BenchmarkTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BenchmarkTest - 2019.03.12 at 17h 03m 39s.xml">
+      <configuration name="BenchmarkTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51418000" />
+    <option name="totallyTimeSpent" value="54499000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="23" width="1440" height="797" extended-state="6" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -501,7 +469,7 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3280116" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.3280116" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.3280116" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39912918" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -533,16 +501,6 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/stat/descriptive/moment/StandardDeviation.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -651,16 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1345">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/SetHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -675,48 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="19" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1046#1047#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -747,10 +653,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="37" column="53" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="37" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="83" column="27" lean-forward="true" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2962#2963#0" expanded="true" />
@@ -759,15 +725,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetTest.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        <state relative-caret-position="353">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/JavaFXTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BenchmarkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>

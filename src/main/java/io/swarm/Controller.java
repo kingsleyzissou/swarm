@@ -74,6 +74,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void open() {
+
 //        FileChooser fileChooser = new FileChooser();
 //        fileChooser.setTitle("Open image");
 //        File file = fileChooser.showOpenDialog(null);

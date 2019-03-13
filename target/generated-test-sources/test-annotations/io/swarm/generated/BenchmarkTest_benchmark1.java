@@ -1,4 +1,4 @@
-package io.benchmarks.generated;
+package io.swarm.generated;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,11 +28,12 @@ import java.lang.reflect.Field;
 import org.openjdk.jmh.infra.BenchmarkParams;
 import org.openjdk.jmh.infra.IterationParams;
 
+import io.swarm.generated.BenchmarkTest_BenchmarkState_jmh;
+import io.swarm.generated.BenchmarkTest_jmh;
 import org.openjdk.jmh.infra.generated.Blackhole_jmh;
-import io.benchmarks.generated.MyBenchmark_ImageWrapper_jmh;
-import io.benchmarks.generated.MyBenchmark_jmh;
+import org.openjdk.jmh.infra.generated.Blackhole_jmh;
 @Generated("org.openjdk.jmh.generators.core.BenchmarkGenerator")
-public final class MyBenchmark_testMethod {
+public final class BenchmarkTest_benchmark1 {
 
     boolean p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     boolean p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -52,27 +53,29 @@ public final class MyBenchmark_testMethod {
     boolean p240, p241, p242, p243, p244, p245, p246, p247, p248, p249, p250, p251, p252, p253, p254, p255;
     int startRndMask;
 
-    public BenchmarkTaskResult testMethod_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult benchmark1_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            MyBenchmark_jmh l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control, threadParams);
-            MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G = _jmh_tryInit_f_imagewrapper2_G(control, threadParams);
+            BenchmarkTest_jmh l_benchmarktest0_0 = _jmh_tryInit_f_benchmarktest0_0(control, threadParams);
+            Blackhole_jmh l_blackhole1_3 = _jmh_tryInit_f_blackhole1_3(control, threadParams);
+            BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2 = _jmh_tryInit_f_benchmarkstate2_2(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
+            l_blackhole1_3.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                 res.allOps++;
             }
 
-            testMethod_thrpt_jmhStub(control, res, l_imagewrapper2_G, l_mybenchmark0_0, l_blackhole1_1);
+            benchmark1_thrpt_jmhStub(control, res, l_benchmarkstate2_2, l_blackhole1_3, l_benchmarktest0_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                    l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -81,10 +84,9 @@ public final class MyBenchmark_testMethod {
             }
 
             if (control.isLastIteration()) {
-                synchronized(this.getClass()) {
-                    f_imagewrapper2_G = null;
-                }
-                f_mybenchmark0_0 = null;
+                f_benchmarkstate2_2 = null;
+                f_blackhole1_3 = null;
+                f_benchmarktest0_0 = null;
                 f_blackhole1_1 = null;
             }
             res.allOps += res.measuredOps;
@@ -95,18 +97,18 @@ public final class MyBenchmark_testMethod {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "testMethod", res.measuredOps, res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "benchmark1", res.measuredOps, res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void testMethod_thrpt_jmhStub(InfraControl control, RawResults result, MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G, MyBenchmark_jmh l_mybenchmark0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void benchmark1_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2, Blackhole_jmh l_blackhole1_3, BenchmarkTest_jmh l_benchmarktest0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+            l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -115,27 +117,29 @@ public final class MyBenchmark_testMethod {
     }
 
 
-    public BenchmarkTaskResult testMethod_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult benchmark1_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            MyBenchmark_jmh l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control, threadParams);
-            MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G = _jmh_tryInit_f_imagewrapper2_G(control, threadParams);
+            BenchmarkTest_jmh l_benchmarktest0_0 = _jmh_tryInit_f_benchmarktest0_0(control, threadParams);
+            Blackhole_jmh l_blackhole1_3 = _jmh_tryInit_f_blackhole1_3(control, threadParams);
+            BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2 = _jmh_tryInit_f_benchmarkstate2_2(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
+            l_blackhole1_3.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                 res.allOps++;
             }
 
-            testMethod_avgt_jmhStub(control, res, l_imagewrapper2_G, l_mybenchmark0_0, l_blackhole1_1);
+            benchmark1_avgt_jmhStub(control, res, l_benchmarkstate2_2, l_blackhole1_3, l_benchmarktest0_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                    l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -144,10 +148,9 @@ public final class MyBenchmark_testMethod {
             }
 
             if (control.isLastIteration()) {
-                synchronized(this.getClass()) {
-                    f_imagewrapper2_G = null;
-                }
-                f_mybenchmark0_0 = null;
+                f_benchmarkstate2_2 = null;
+                f_blackhole1_3 = null;
+                f_benchmarktest0_0 = null;
                 f_blackhole1_1 = null;
             }
             res.allOps += res.measuredOps;
@@ -158,18 +161,18 @@ public final class MyBenchmark_testMethod {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "testMethod", res.measuredOps, res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "benchmark1", res.measuredOps, res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void testMethod_avgt_jmhStub(InfraControl control, RawResults result, MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G, MyBenchmark_jmh l_mybenchmark0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void benchmark1_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2, Blackhole_jmh l_blackhole1_3, BenchmarkTest_jmh l_benchmarktest0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+            l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -178,19 +181,21 @@ public final class MyBenchmark_testMethod {
     }
 
 
-    public BenchmarkTaskResult testMethod_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult benchmark1_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            MyBenchmark_jmh l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control, threadParams);
-            MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G = _jmh_tryInit_f_imagewrapper2_G(control, threadParams);
+            BenchmarkTest_jmh l_benchmarktest0_0 = _jmh_tryInit_f_benchmarktest0_0(control, threadParams);
+            Blackhole_jmh l_blackhole1_3 = _jmh_tryInit_f_blackhole1_3(control, threadParams);
+            BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2 = _jmh_tryInit_f_benchmarkstate2_2(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
+            l_blackhole1_3.clearSinks();
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                 res.allOps++;
             }
 
@@ -198,11 +203,11 @@ public final class MyBenchmark_testMethod {
             int batchSize = control.iterationParams.getBatchSize();
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             SampleBuffer buffer = new SampleBuffer();
-            testMethod_sample_jmhStub(control, res, buffer, targetSamples, opsPerInv, batchSize, l_imagewrapper2_G, l_mybenchmark0_0, l_blackhole1_1);
+            benchmark1_sample_jmhStub(control, res, buffer, targetSamples, opsPerInv, batchSize, l_benchmarkstate2_2, l_blackhole1_3, l_benchmarktest0_0, l_blackhole1_1);
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                    l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
                     res.allOps++;
                 }
                 control.preTearDown();
@@ -211,10 +216,9 @@ public final class MyBenchmark_testMethod {
             }
 
             if (control.isLastIteration()) {
-                synchronized(this.getClass()) {
-                    f_imagewrapper2_G = null;
-                }
-                f_mybenchmark0_0 = null;
+                f_benchmarkstate2_2 = null;
+                f_blackhole1_3 = null;
+                f_benchmarktest0_0 = null;
                 f_blackhole1_1 = null;
             }
             res.allOps += res.measuredOps * batchSize;
@@ -222,13 +226,13 @@ public final class MyBenchmark_testMethod {
             res.allOps /= batchSize;
             res.measuredOps *= opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(res.allOps, res.measuredOps);
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "testMethod", buffer, control.benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "benchmark1", buffer, control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void testMethod_sample_jmhStub(InfraControl control, RawResults result, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G, MyBenchmark_jmh l_mybenchmark0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void benchmark1_sample_jmhStub(InfraControl control, RawResults result, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2, Blackhole_jmh l_blackhole1_3, BenchmarkTest_jmh l_benchmarktest0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         long operations = 0;
         int rnd = (int)System.nanoTime();
@@ -243,7 +247,7 @@ public final class MyBenchmark_testMethod {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+                l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -261,63 +265,68 @@ public final class MyBenchmark_testMethod {
     }
 
 
-    public BenchmarkTaskResult testMethod_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult benchmark1_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         if (threadParams.getSubgroupIndex() == 0) {
             Blackhole_jmh l_blackhole1_1 = _jmh_tryInit_f_blackhole1_1(control, threadParams);
-            MyBenchmark_jmh l_mybenchmark0_0 = _jmh_tryInit_f_mybenchmark0_0(control, threadParams);
-            MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G = _jmh_tryInit_f_imagewrapper2_G(control, threadParams);
+            BenchmarkTest_jmh l_benchmarktest0_0 = _jmh_tryInit_f_benchmarktest0_0(control, threadParams);
+            Blackhole_jmh l_blackhole1_3 = _jmh_tryInit_f_blackhole1_3(control, threadParams);
+            BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2 = _jmh_tryInit_f_benchmarkstate2_2(control, threadParams);
 
             control.preSetup();
             l_blackhole1_1.clearSinks();
+            l_blackhole1_3.clearSinks();
 
             RawResults res = new RawResults();
             int batchSize = control.iterationParams.getBatchSize();
-            testMethod_ss_jmhStub(control, batchSize, res, l_imagewrapper2_G, l_mybenchmark0_0, l_blackhole1_1);
+            benchmark1_ss_jmhStub(control, batchSize, res, l_benchmarkstate2_2, l_blackhole1_3, l_benchmarktest0_0, l_blackhole1_1);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                synchronized(this.getClass()) {
-                    f_imagewrapper2_G = null;
-                }
-                f_mybenchmark0_0 = null;
+                f_benchmarkstate2_2 = null;
+                f_blackhole1_3 = null;
+                f_benchmarktest0_0 = null;
                 f_blackhole1_1 = null;
             }
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             long totalOps = opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(totalOps, totalOps);
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "testMethod", res.getTime(), control.benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "benchmark1", res.getTime(), control.benchmarkParams.getTimeUnit()));
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public void testMethod_ss_jmhStub(InfraControl control, int batchSize, RawResults result, MyBenchmark_ImageWrapper_jmh l_imagewrapper2_G, MyBenchmark_jmh l_mybenchmark0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
+    public void benchmark1_ss_jmhStub(InfraControl control, int batchSize, RawResults result, BenchmarkTest_BenchmarkState_jmh l_benchmarkstate2_2, Blackhole_jmh l_blackhole1_3, BenchmarkTest_jmh l_benchmarktest0_0, Blackhole_jmh l_blackhole1_1) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_mybenchmark0_0.testMethod(l_imagewrapper2_G);
+            l_benchmarktest0_0.benchmark1(l_benchmarkstate2_2, l_blackhole1_3);
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
     }
 
     
-    static volatile MyBenchmark_ImageWrapper_jmh f_imagewrapper2_G;
+    BenchmarkTest_BenchmarkState_jmh f_benchmarkstate2_2;
     
-    MyBenchmark_ImageWrapper_jmh _jmh_tryInit_f_imagewrapper2_G(InfraControl control, ThreadParams threadParams) throws Throwable {
-        MyBenchmark_ImageWrapper_jmh val = f_imagewrapper2_G;
-        if (val != null) {
-            return val;
+    BenchmarkTest_BenchmarkState_jmh _jmh_tryInit_f_benchmarkstate2_2(InfraControl control, ThreadParams threadParams) throws Throwable {
+        BenchmarkTest_BenchmarkState_jmh val = f_benchmarkstate2_2;
+        if (val == null) {
+            val = new BenchmarkTest_BenchmarkState_jmh();
+            val.initialize();
+            f_benchmarkstate2_2 = val;
         }
-        synchronized(this.getClass()) {
-            val = f_imagewrapper2_G;
-            if (val != null) {
-                return val;
-            }
-            val = new MyBenchmark_ImageWrapper_jmh();
-            val.readyTrial = true;
-            f_imagewrapper2_G = val;
+        return val;
+    }
+    
+    BenchmarkTest_jmh f_benchmarktest0_0;
+    
+    BenchmarkTest_jmh _jmh_tryInit_f_benchmarktest0_0(InfraControl control, ThreadParams threadParams) throws Throwable {
+        BenchmarkTest_jmh val = f_benchmarktest0_0;
+        if (val == null) {
+            val = new BenchmarkTest_jmh();
+            f_benchmarktest0_0 = val;
         }
         return val;
     }
@@ -333,13 +342,13 @@ public final class MyBenchmark_testMethod {
         return val;
     }
     
-    MyBenchmark_jmh f_mybenchmark0_0;
+    Blackhole_jmh f_blackhole1_3;
     
-    MyBenchmark_jmh _jmh_tryInit_f_mybenchmark0_0(InfraControl control, ThreadParams threadParams) throws Throwable {
-        MyBenchmark_jmh val = f_mybenchmark0_0;
+    Blackhole_jmh _jmh_tryInit_f_blackhole1_3(InfraControl control, ThreadParams threadParams) throws Throwable {
+        Blackhole_jmh val = f_blackhole1_3;
         if (val == null) {
-            val = new MyBenchmark_jmh();
-            f_mybenchmark0_0 = val;
+            val = new Blackhole_jmh();
+            f_blackhole1_3 = val;
         }
         return val;
     }

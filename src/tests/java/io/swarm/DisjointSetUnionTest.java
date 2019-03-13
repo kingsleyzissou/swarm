@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class QuickUnionTest {
+public class DisjointSetUnionTest {
 
     DisjointSet set;
 
