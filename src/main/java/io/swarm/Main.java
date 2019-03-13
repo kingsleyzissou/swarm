@@ -11,10 +11,11 @@ import java.net.URL;
 
 public class Main extends Application{
 
+    public static final String MAIN_FXML = "./src/main/resources/views/main.fxml";
+
     @Override
     public void start(Stage stage) throws Exception {
-        URL url = new File("./resources/views/main.fxml").toURL();
-        Parent root = FXMLLoader.load(url);
+        Parent root = FXMLLoader.load(new File(MAIN_FXML).toURL());
         stage.setTitle("Swarm");
         stage.setScene(new Scene(root, 800, 600));
         stage.show();

@@ -3,7 +3,9 @@ package io.helpers;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-public class RegressionAnalysis {
+import java.io.Serializable;
+
+public class RegressionAnalysis implements Serializable {
 
     private double rsquared;
     private double slope;

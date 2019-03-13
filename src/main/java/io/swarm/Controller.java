@@ -3,33 +3,23 @@ package io.swarm;
 import io.helpers.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import org.openjdk.jmh.annotations.Fork;
+import javafx.stage.Stage;
+//import org.openjdk.jmh.annotations.Fork;
 
-import java.io.File;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller implements Initializable, Switchable {
 
-    private Image original;
-    private WritableImage grayScale;
-
+    private Stage stage;
     private DisjointSet set;
-    private double height;
-    private double width;
+    private DisjointImage disjointImage;
 
     @FXML private ImageView image;
     @FXML private StackPane stack;
@@ -46,7 +36,8 @@ public class Controller implements Initializable {
 
     @FXML
     public void quit() {
-        System.exit(0);
+        stage.setScene(Main.getScenes().get(SceneName.SCENE1).getScene());
+//        System.exit(0);
     }
 
 //    private void sizeListener() {
@@ -78,54 +69,65 @@ public class Controller implements Initializable {
 //        FileChooser fileChooser = new FileChooser();
 //        fileChooser.setTitle("Open image");
 //        File file = fileChooser.showOpenDialog(null);
-        File file = new File("./resources/assets/flock-of-birds.jpg");
+//        File file = new File("./resources/assets/flock-of-birds.jpg");
 //        File file = new File("./resources/assets/v.jpg");
-//        File file = new File("./resources/assets/Birds.jpg");
+        File file = new File("./src/main/resources/assets/Birds.jpg");
 //        File file = new File("./resources/assets/s.png");
         if (file != null) {
-
-            original = new Image(file.toURI().toString(), image.getFitWidth(), image.getFitHeight(), true, false);
-
-            image.setImage(original);
-
-            height = original.getHeight();
-            width = original.getWidth();
-
-            set = new DisjointSet((int) width,(int) height);
+            String fileToString = file.toURI().toString();
+            Image img = new Image(fileToString, image.getFitWidth(), image.getFitHeight(),
+                    true, false);
+            set = new DisjointSet((int) img.getWidth(), (int) img.getHeight());
+            disjointImage = new DisjointImage(img, set);
+            image.setImage(img);
 
             this.filter();
-            this.image.setImage(grayScale);
+            this.image.setImage(disjointImage.filter());
             this.count();
             this.drawSquares();
+
+//            try {
+//                save();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                System.exit(0);
+//            }
 
             tryRegression();
 
         }
     }
 
+    private void save() throws IOException {
+        FileOutputStream fos = new FileOutputStream("vset.dat");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(set);
+        oos.close();
+    }
+
     @FXML
     public void filter() {
-        this.grayScale = ImageHandler.filter(original, grayScale, set);
+        image.setImage(disjointImage.filter());
     }
 
 
 
     @FXML
     public void count() {
-        SetHandler.createSets(this.set, (int) width);
+        set.generateClusters();
         System.out.println(set.countSets());
     }
 
     @FXML
     public void drawSquares() {
-        (new Tagger(this.set, this.width, this.image, this.stack)).tagImage();
+        (new Tagger(this.set, disjointImage.getWidth(), this.image, this.stack)).tagImage();
     }
 
     public void tryRegression() {
 
         Pane pane = new Pane();
 
-        FlockRegression flock = new FlockRegression(set, (int) width, (int) height);
+        FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth(), (int) disjointImage.getHeight());
 
         RegressionAnalysis overall = flock.overAllRegression();
 
@@ -136,12 +138,17 @@ public class Controller implements Initializable {
         if(!lines.isEmpty()) {
             pane.getChildren().addAll(lines);
 
-            pane.setMaxSize(width, height);
-            pane.setClip(new Rectangle(width, height));
+            pane.setMaxSize(disjointImage.getWidth(), disjointImage.getHeight());
+            pane.setClip(new Rectangle(disjointImage.getWidth(), disjointImage.getHeight()));
 
             stack.getChildren().add(pane);
         }
 
+    }
+
+    @Override
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
 }

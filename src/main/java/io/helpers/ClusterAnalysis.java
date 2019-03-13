@@ -3,7 +3,9 @@ package io.helpers;
 import org.apache.commons.math3.stat.descriptive.moment.Mean;
 import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
 
-public class ClusterAnalysis {
+import java.io.Serializable;
+
+public class ClusterAnalysis implements Serializable {
 
     private double[] observations;
 

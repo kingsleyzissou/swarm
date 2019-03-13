@@ -2,10 +2,11 @@ package io.swarm;
 
 import io.helpers.ClusterAnalysis;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DisjointSet {
+public class DisjointSet implements Serializable {
 
     private int[] set;
     private int height, width;
@@ -189,6 +190,22 @@ public class DisjointSet {
             }
 
             return Arrays.stream(clusters.toArray(serialisedClusters)).mapToDouble(Double::doubleValue).toArray();
+    }
+
+
+    public void generateClusters() {
+        for(int index = 0; index < getSize(); index++) {
+            int right = index + 1;
+            int down = index + (int) width;
+
+            if(getValue(index) != -1) {
+                if(right < getSize() - 1 && getValue(right) != -1)
+                    quickUnion(index, right);
+                if(down < getSize() - 1 && getValue(down) != -1)
+                    quickUnion(index, down);
+            }
+
+        }
     }
 
     /**
