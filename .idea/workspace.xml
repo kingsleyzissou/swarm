@@ -2,20 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cc2ec8f-f3cd-4c85-aad8-a52f6fbd26a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/swarm/controllers/ImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/swarm/stats/BestFit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/views/image.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/benchmarks/MyBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/stats/ClusterAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/FlockRegression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/stats/FlockRegression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/IndexCoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/IndexCoordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/RegressionAnalysis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/SceneLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/SceneWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/Tagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/controllers/LandingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Switchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/Switchable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/two.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/two.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/SceneName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/SceneOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swarm/Switchable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swarm/utilities/Switchable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/landing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/one.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/two.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swarm/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/MyBenchmark$BenchmarkState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/benchmarks/MyBenchmark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/ClusterAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/FlockRegression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/IndexCoordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/RegressionAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/SceneLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/SceneWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/helpers/Tagger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/DisjointImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/DisjointSet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swarm/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Mutable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/SceneName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/SceneOne.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/SceneTwo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swarm/Switchable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/one.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/two.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_BenchmarkState_jmh.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_BenchmarkState_jmh_B1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_BenchmarkState_jmh_B2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_BenchmarkState_jmh_B3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_clusterCreationBenchmark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_countBirds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_jmh.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_jmh_B1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_jmh_B2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_jmh_B3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/swarm/BasicFlockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/swarm/BasicFlockTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/swarm/DisjointSetFindTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/swarm/DisjointSetFindTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/swarm/DisjointSetUnionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/swarm/DisjointSetUnionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/swarm/VFlockTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/swarm/VFlockTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,35 +77,68 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/controllers/LandingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+            <state relative-caret-position="217">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#3164#3165#0" expanded="true" />
-                <element signature="e#3218#3219#0" expanded="true" />
-                <element signature="e#4433#4434#0" expanded="true" />
-                <element signature="e#4466#4467#0" expanded="true" />
+                <marker date="1552589094088" expanded="true" signature="3710:3852" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/Switchable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="92">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="204" column="13" lean-forward="true" selection-start-line="204" selection-start-column="13" selection-end-line="204" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1663#1664#0" expanded="true" />
-                <element signature="e#1696#1697#0" expanded="true" />
-                <element signature="e#1806#1807#0" expanded="true" />
-                <element signature="e#1836#1837#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-48">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/controllers/ImageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -64,89 +146,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+            <state relative-caret-position="404">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1299#1300#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/two.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+            <state relative-caret-position="217">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/views/landing.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="86" column="35" selection-start-line="80" selection-start-column="24" selection-end-line="86" selection-end-column="35" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/main.fxml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/stats/FlockRegression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="53" column="31" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="53" selection-end-column="31" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/one.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/SceneLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+            <state relative-caret-position="209">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneOne.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -183,6 +221,8 @@
       <find>ikonli</find>
       <find>11.0.2</find>
       <find>sethan</find>
+      <find>slider</find>
+      <find>filt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,16 +231,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/io/bench/MyBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/MyBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/resources/main.fxml" />
         <option value="$PROJECT_DIR$/resources/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/StatisticAnalysis.java" />
         <option value="$USER_HOME$/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5153.38/IntelliJ IDEA.app.vmoptions" />
-        <option value="$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/ClusterStatistics.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/IndexCoordinate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/helpers/FlockRegression.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXThreadingRule.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/ImageTest.java" />
@@ -214,26 +249,39 @@
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/SetHandler.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/BenchmarkTest.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/MyBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/helpers/RegressionAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java" />
-        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java" />
         <option value="$PROJECT_DIR$/src/tests/java/io/swarm/VFlockTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/swarm/Mutable.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/io/helpers/SceneWrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/views/main.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneOne.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/swarm/Switchable.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneName.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/helpers/SceneLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/views/three.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/views/two.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/FileSelect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/views/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/styles/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/SceneLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneThree.java" />
         <option value="$PROJECT_DIR$/src/main/resources/views/one.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/RegressionAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/LineOfBestFit.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/SceneOne.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/BestFit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/helpers/FlockRegression.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/utilities/Switchable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/controllers/SceneOne.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/utilities/SceneName.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneName.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointSet.java" />
       </list>
     </option>
   </component>
@@ -302,25 +350,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
               <item name="swarm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="utilities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -361,7 +409,9 @@
       <recent name="io.benchmarks" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.swarm.benchmarks" />
       <recent name="io.swarm" />
+      <recent name="io" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -396,7 +446,7 @@
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
+          <option name="PATTERN" value="io.swarm.utilities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -408,7 +458,7 @@
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
+          <option name="PATTERN" value="io.swarm.utilities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -424,7 +474,7 @@
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
+          <option name="PATTERN" value="io.swarm.utilities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -440,7 +490,7 @@
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.swarm.*" />
+          <option name="PATTERN" value="io.swarm.utilities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -487,7 +537,7 @@
       <workItem from="1551975321733" duration="33420000" />
       <workItem from="1552306685840" duration="13242000" />
       <workItem from="1552392377671" duration="20441000" />
-      <workItem from="1552497448973" duration="6186000" />
+      <workItem from="1552497448973" duration="24436000" />
     </task>
     <servers />
   </component>
@@ -524,17 +574,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73289000" />
+    <option name="totallyTimeSpent" value="91539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="-3" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.26037195" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Duplicate detector" weight="0.3280116" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3280116" />
@@ -543,7 +594,7 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3280116" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.3280116" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.3280116" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39912918" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -625,18 +676,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/b.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/JavaFXTestRunner.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/JavaFXTestRunner.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetFindTest.java">
@@ -667,46 +706,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/io/benchmarks/generated/MyBenchmark_testMethod.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/DisjointSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="949">
-          <caret line="203" column="26" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/MyBenchmark.java" />
     <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BenchmarkTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ClusterAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/FlockRegression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1801">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/ImageHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/IndexCoordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/SetHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/vset.dat">
       <provider selected="true" editor-type-id="text-editor">
@@ -730,47 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/benchmarks/MyBenchmark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/Tagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#551#562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/RegressionAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -778,48 +739,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/SceneWrapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/three.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="172">
+          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Switchable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/DisjointImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1806#1807#0" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="219">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#357#358#0" expanded="true" />
@@ -828,76 +759,236 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/helpers/SceneLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/two.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        <state relative-caret-position="222">
+          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/Tagger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1625">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#551#562#0" expanded="true" />
+            <element signature="e#2485#2486#0" expanded="true" />
+            <element signature="e#2538#2539#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/benchmarks/MyBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneOne.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/DisjointSetUnionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="164">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/SceneThree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/image.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="158" column="34" selection-start-line="147" selection-start-column="22" selection-end-line="158" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/java/io/swarm/BasicFlockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="41" column="87" selection-start-line="41" selection-start-column="87" selection-end-line="41" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/IndexCoordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/FileSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/stats/BestFit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/stats/ClusterAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/stats/FlockRegression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/Switchable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/controllers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/controllers/LandingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1552589094088" expanded="true" signature="3710:3852" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/controllers/ImageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/landing.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="86" column="35" selection-start-line="80" selection-start-column="24" selection-end-line="86" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/utilities/SceneName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+        <state relative-caret-position="404">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+        <state relative-caret-position="-48">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-            <element signature="e#3218#3219#0" expanded="true" />
-            <element signature="e#4433#4434#0" expanded="true" />
-            <element signature="e#4466#4467#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/main.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/swarm/collections/DisjointSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="53" selection-end-column="31" />
+        <state relative-caret-position="278">
+          <caret line="204" column="13" lean-forward="true" selection-start-line="204" selection-start-column="13" selection-end-line="204" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/two.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/one.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">

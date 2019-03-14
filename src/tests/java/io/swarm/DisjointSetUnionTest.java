@@ -1,5 +1,6 @@
 package io.swarm;
 
+import io.swarm.collections.DisjointSet;
 import org.junit.Before;
 import org.junit.Test;
 

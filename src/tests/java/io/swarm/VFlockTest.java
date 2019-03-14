@@ -1,7 +1,7 @@
 package io.swarm;
 
-import io.helpers.FlockRegression;
-import io.helpers.RegressionAnalysis;
+import io.swarm.collections.DisjointImage;
+import io.swarm.collections.DisjointSet;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class VFlockTest extends ApplicationTest {
     @Test
     public void imageWithNoFormationReturnsCluster() {
 //        FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth(), (int) disjointImage.getHeight());
-//        RegressionAnalysis overall = flock.overAllRegression();
+//        BestFit overall = flock.overAllRegression();
 //        assertFalse(overall.getRSquared() > 0.5);
     }
 
