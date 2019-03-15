@@ -12,6 +12,11 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO Refactor tagging
+// TODO Add comments
+// TODO Finish JUnit tests
+// TODO Finish Benchmark tests
+
 public class Main extends Application{
 
     public static Map<SceneName, SceneWrapper> scenes;
@@ -28,7 +33,8 @@ public class Main extends Application{
         Image img = new Image(file.toURI().toString(), 800, 600, true, false);
         DisjointSet set = new DisjointSet(img.getWidth(), img.getHeight());
         DisjointImage di = new DisjointImage(img, set);
-        stage.setScene(scenes.get(SceneName.IMAGE).loadScene(set, di));
+        SceneWrapper scene = scenes.get(SceneName.IMAGE);
+        stage.setScene(scene.loadScene(set, di));
         stage.show();
     }
 

@@ -1,5 +1,6 @@
 package io.swarm.utilities;
 
+import io.swarm.collections.CoordinateSet;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -21,27 +22,46 @@ public class Tagger {
         this.pane = pane;
     }
 
+    /**
+     * Begin preparing the image for tagging
+     * Calls the methods to set the boundaries of the tag,
+     * creates the tag box and then passes the rectangles
+     * to the next method
+     *
+     */
     public void tagImage() {
         int count = 1;
         for(int rootIndex : this.set.getRootIndices()) {
             int clusterSize = getClusterWeight(rootIndex);
             if(clusterSize != 0) {
                 int[] birdBounds = getCoordinates(rootIndex);
-                setClusterBounbaries(rootIndex, birdBounds);
+                setClusterBoundaries(rootIndex, birdBounds);
                 String clusterNumber = getClusterNumber(count, clusterSize);
                 count = count + clusterSize;
                 rectangles.add(buildRectangle(birdBounds, clusterNumber));
             }
         }
-        addSquaresToWindow(rectangles);
+        addRectanglesToPane(rectangles);
     }
 
+    /**
+     * Calculate the weight of each cluster
+     *
+     * @param index of the cluster being analysed
+     * @return weight of the cluster
+     */
     private int getClusterWeight(int index) {
         int size = set.clusterSize(set.getValue(index));
         return set.getStatistics().weight(size);
     }
 
-    private void setClusterBounbaries(int rootIndex, int[] birdBounds) {
+    /**
+     * Set the boundaries of the cluster tag
+     *
+     * @param rootIndex the index of the root of the set
+     * @param birdBounds the boundaries to be updated
+     */
+    private void setClusterBoundaries(int rootIndex, int[] birdBounds) {
         for(int i = 0; i < set.getSize(); i++) {
             if(set.getValue(i) == rootIndex) {
                 updateBounds(i, birdBounds);
@@ -49,28 +69,65 @@ public class Tagger {
         }
     }
 
+
+    /**
+     * Gather the coordinates
+     *
+     * @param index from which the coordinates are gathered
+     * @return array of 4 coordinates
+     */
     private int[] getCoordinates(int index) {
         return new int[]{
-                index % ((int) imageWidth),
-                index % ((int) imageWidth),
-                index / ((int) imageWidth),
-                index / ((int) imageWidth)
+            CoordinateSet.getXCoordinate(index, (int) imageWidth),
+            CoordinateSet.getXCoordinate(index, (int) imageWidth),
+            CoordinateSet.getYCoordinate(index, (int) imageWidth),
+            CoordinateSet.getYCoordinate(index, (int) imageWidth)
         };
     }
 
+    /**
+     * Update the bounds of the tag
+     *
+     * @param index element of tag to be updated
+     * @param bounds the boundaries of the tag
+     */
     private void updateBounds(int index, int[] bounds) {
-        int x = index % (int) imageWidth;
-        int y = index / (int) imageWidth;
+        int x = CoordinateSet.getXCoordinate(index, (int) imageWidth);
+        int y = CoordinateSet.getYCoordinate(index, (int) imageWidth);
         bounds[0] = (x < bounds[0]) ? x : bounds[0];
         bounds[1] = (x > bounds[1]) ? x : bounds[1];
         bounds[2] = (y < bounds[2]) ? y : bounds[2];
         bounds[3] = (y > bounds[3]) ? y : bounds[3];
     }
 
-    private void addSquaresToWindow(ArrayList<Rectangle> rectangles) {
+    /**
+     * Pad the tag box
+     *
+     * @param bounds the bounds to be padded
+     */
+    private void addPadding(int[] bounds) {
+        bounds[0] = (bounds[0] - 5 > 0) ? bounds[0] - 5 : bounds[0];
+        bounds[1] = (bounds[1] + 5 < set.getSize()) ? bounds[1] + 5 : bounds[1];
+        bounds[2] = (bounds[2] - 5 > 0) ? bounds[2] - 5 : bounds[2];
+        bounds[3] = (bounds[3] + 5 < set.getSize()) ? bounds[3] + 5 : bounds[3];
+    }
+
+    /**
+     * Install the rectangles to the
+     *
+     * @param rectangles to be installed to the pane
+     */
+    private void addRectanglesToPane(ArrayList<Rectangle> rectangles) {
         pane.getChildren().addAll(rectangles);
     }
 
+    /**
+     * Construct the rectangle to be added to the scene
+     *
+     * @param bounds of the rectangle
+     * @param clusterNumber label for the rectangle
+     * @return rectangle with tooltip label
+     */
     private Rectangle buildRectangle(int[] bounds, String clusterNumber) {
         addPadding(bounds);
         Rectangle r = new Rectangle(bounds[0], bounds[2], bounds[1] - bounds[0] , bounds[3] - bounds[2]);
@@ -81,14 +138,18 @@ public class Tagger {
         return r;
     }
 
+    /**
+     * Calculate the number of the cluster based on the weight of the cluster.
+     * The number is used for the label of the tag
+     *
+     * @param count the current count
+     * @param clusterSize weighted size of the cluster
+     * @return the cluster number in a string to be used for a label
+     */
     private String getClusterNumber(int count, int clusterSize) {
-
         StringBuilder str = new StringBuilder();
-
         if(clusterSize == 1) return str.append("Bird: ").append(count).toString();
-
         str.append("Birds: ");
-
         for(int i = count; i < count + clusterSize; i++) {
             if(i != (count + clusterSize) - 1)
                 str.append(i).append(", ");
@@ -96,14 +157,7 @@ public class Tagger {
                 str.append(i);
         }
         return str.toString();
-
     }
 
-    private void addPadding(int[] bounds) {
-        bounds[0] = (bounds[0] - 10 > 0) ? bounds[0] - 10 : bounds[0];
-        bounds[1] = (bounds[1] + 10 < set.getSize()) ? bounds[1] + 10 : bounds[1];
-        bounds[2] = (bounds[2] - 10 > 0) ? bounds[2] - 10 : bounds[2];
-        bounds[3] = (bounds[3] - 10 < set.getSize()) ? bounds[3] + 10 : bounds[3];
-    }
 }
 

@@ -9,6 +9,13 @@ import java.io.File;
 
 public class FileSelect {
 
+    /**
+     * File selection helper
+     *
+     * @param width of the ImageView
+     * @param height of the ImageView
+     * @return selected file
+     */
     public static DisjointImage load(int width, int height) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open disjointImage");
@@ -21,4 +28,5 @@ public class FileSelect {
         }
         return null;
     }
+
 }

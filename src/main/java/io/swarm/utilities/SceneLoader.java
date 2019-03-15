@@ -12,6 +12,18 @@ import java.net.URL;
 
 public class SceneLoader {
 
+    /**
+     * Load a scene and provide the relevant data
+     * required for the scene's controller
+     *
+     * @param stage the parent stage element
+     * @param location the location of the view resource
+     * @param set the disjoint set
+     * @param image the corresponding image to the disjoint set
+     *
+     * @return the scene to be loaded
+     * @throws IOException if the scene cannot be loaded
+     */
     public Scene load(Stage stage, URL location, DisjointSet set, DisjointImage image) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(location);

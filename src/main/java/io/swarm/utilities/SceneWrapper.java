@@ -22,11 +22,25 @@ public class SceneWrapper {
         this.loader = new SceneLoader();
     }
 
+    /**
+     * Load the scene and return this for use in the stage
+     *
+     * @param set the disjoint set for the underlying image
+     * @param image the image corresponding to the disjoint set
+     *
+     * @return the scene to be loaded
+     * @throws IOException if the scene cannot be loaded
+     */
     public Scene loadScene(DisjointSet set, DisjointImage image) throws IOException {
         if(scene == null) setScene(loader.load(stage, location, set, image));
         return scene;
     }
 
+    /**
+     * Setter method for setting the scene in the SceneWrapper
+     *
+     * @param scene the scene to be added
+     */
     public void setScene(Scene scene) {
         this.scene = scene;
     }

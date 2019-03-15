@@ -5,38 +5,27 @@ import io.swarm.stats.ClusterAnalysis;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class DisjointSet implements Serializable {
 
     private int[] set;
     private int height, width;
-    private ArrayList<Integer> roots;
-    private double[][] rootCooirdinates;
+    private HashSet<Integer> roots;
     private ClusterAnalysis statistics;
 
     public DisjointSet(int width, int height) {
         this.width = width;
         this.height = height;
         this.set = new int[width * height];
-        roots = new ArrayList<>();
+        roots = new HashSet<>();
     }
 
     public DisjointSet(double width, double height) {
         this.width = (int) width;
         this.height = (int) height;
         this.set = new int[(int) width * (int) height];
-        roots = new ArrayList<>();
-    }
-
-    /**
-     * Get the average size of a cluster
-     *
-     * @return average cluster size
-     */
-    public double getAverage() {
-        if(roots.isEmpty()) gatherRoots();
-        if(statistics == null) statistics = new ClusterAnalysis(getSerializedClusterSizes());
-        return statistics.mean();
+        roots = new HashSet<>();
     }
 
     /**
@@ -62,13 +51,13 @@ public class DisjointSet implements Serializable {
     }
 
     /**
-     * Find the root of a disjoint set node
+     * Find the root of a disjoint set node with path compression
      *
      * @param index the node for which the parent is being searched
      * @return the parent of the index node
      */
     public int find(int index) {
-        return isRoot(index) ? index : find(this.set[index]);
+        return isRoot(index) ? index : (set[index] = find(set[index]));
     }
 
     /**
@@ -129,6 +118,11 @@ public class DisjointSet implements Serializable {
             if(this.isRoot(i)) roots.add(i);
     }
 
+    /**
+     * Count the number of roots in the set
+     *
+     * @return size of the roots in the set
+     */
     public int countSets() {
         gatherRoots();
         return noiseReducedCount();
@@ -140,23 +134,25 @@ public class DisjointSet implements Serializable {
      *
      */
     public int noiseReducedCount() {
+        // Gather statistical information required for the method
         if(statistics == null) statistics = new ClusterAnalysis(getSerializedClusterSizes());
+        // Get all the roots if this has not been done yet
         if(roots.isEmpty()) gatherRoots();
-
+        // Create a list for items to be removed
         ArrayList<Integer> toRemove = new ArrayList<>();
-
         int count = 0;
-
         for(Integer index : roots) {
             int size = clusterSize(getValue(index));
+            // Get the weight of each cluster
             int weight = statistics.weight(size);
+            // Remove outlier
             if(weight == 0) toRemove.add(index);
+            // Or increase the count based on the weight of the cluster
             if(weight != 0) count = count + weight;
         }
-
+        // Remove all outliers from the HashSet
         roots.removeAll(toRemove);
         return count;
-
     }
 
     /**
@@ -175,9 +171,11 @@ public class DisjointSet implements Serializable {
      *
      * @return list of indices of the roots in the set
      */
-    public ArrayList<Integer> getRootIndices() {
+    public HashSet<Integer> getRootIndices() {
         return this.roots;
     }
+
+
 
     public double[] getSerializedClusterSizes() {
             ArrayList<Double> clusters = new ArrayList<>();
@@ -189,6 +187,10 @@ public class DisjointSet implements Serializable {
             return Arrays.stream(clusters.toArray(serialisedClusters)).mapToDouble(Double::doubleValue).toArray();
     }
 
+    /**
+     * Begin merging the clusters in the set by iterating through the set
+     * and merging elements that are adjacent to each other
+     */
     public void generateClusters() {
         if(roots != null || !roots.isEmpty()) roots.clear();
         for(int index = 0; index < getSize(); index++) {
@@ -207,31 +209,46 @@ public class DisjointSet implements Serializable {
     }
 
     /**
-     * pretty print the disjoint set
+     * Pretty print the disjoint set
      *
      */
     @Override
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
                 int current = x + y * width;
                 int value = isRoot(current) ? -9 : set[current];
-                str += " | " + value + " | ";
+                str.append(" | ").append(value).append(" | ");
             }
-            str += "\n";
+            str.append("\n");
         }
-        return str;
+        return str.toString();
     }
 
+    /**
+     * Returns the statistical analysis of the size of the clusters
+     *
+     * @return basic statistic wrapper for the size of the clusters
+     */
     public ClusterAnalysis getStatistics() {
         return statistics;
     }
 
+    /**
+     * Get the width of the corresponding image to the disjoint set
+     *
+     * @return width
+     */
     public int getWidth() {
         return this.width;
     }
 
+    /**
+     * Replace the set and start over
+     *
+     * @param array new array to be added to the set
+     */
     public void replaceSet(int[] array) {
         if(array.length == set.length) this.set = array;
     }

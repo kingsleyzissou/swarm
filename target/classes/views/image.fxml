@@ -15,8 +15,6 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<!--<?import org.kordamp.ikonli.javafx.FontIcon?>-->
-
 <BorderPane prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.swarm.controllers.ImageController">
     <top>
         <JFXToolbar maxHeight="100.0" minHeight="100.0" style="-fx-background-color: #263238;">
@@ -53,8 +51,8 @@
                     <children>
                         <Group StackPane.alignment="TOP_CENTER">
                             <ImageView fx:id="image" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
-                            <Pane fx:id="tagPane" />
-                            <Pane fx:id="linePane" />
+                            <Pane fx:id="linePane" prefWidth="800" prefHeight="600" />
+                            <Pane fx:id="tagPane" prefWidth="800" prefHeight="600" />
                         </Group>
                     </children>
                 </StackPane>
@@ -135,7 +133,7 @@
          <right>
             <VBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f7f7f7;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Adjusgt Brightness" textFill="BLACK">
+                  <Label text="Adjust Brightness" textFill="BLACK">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>

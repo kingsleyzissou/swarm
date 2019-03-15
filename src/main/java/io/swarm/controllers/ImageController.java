@@ -30,72 +30,99 @@ public class ImageController implements Switchable {
     @FXML Pane linePane;
     @FXML JFXSlider brightness;
 
-    @Override
-    public void quit() {
-        System.exit(0);
-    }
-
+    /**
+     * Custom constructor used to provide the Controller with
+     * the required data
+     *
+     * @param stage the parent stage to the scene
+     * @param set the disjoint set for the image
+     * @param disjointImage wrapper for the image being manipulated
+     */
     @Override
     public void construct(Stage stage, DisjointSet set, DisjointImage disjointImage) {
         this.stage = stage;
         this.set = set;
         this.disjointImage = disjointImage;
         image.setImage(disjointImage.getOriginalImage());
-        setImageToMonochrome();
-        countBirds();
-        tagBirds();
-        analyseFormation();
+//        setImageToMonochrome();
+//        countBirds();
+//        image.setImage(disjointImage.recolorImage());
+//        tagBirds();
+//        analyseFormation();
     }
 
+    /**
+     * Gracefully exit the application
+     *
+     */
+    @Override
+    public void quit() {
+        System.exit(0);
+    }
+
+    /**
+     * Open an image from file
+     *
+     */
     public void open() {
         DisjointImage newImage = FileSelect.load((int) image.getFitWidth(), (int) image.getFitHeight());
         if(newImage != null) {
             disjointImage = newImage;
             set = newImage.getSet();
             image.setImage(newImage.getOriginalImage());
-            tagPane.getChildren().clear();
-            linePane.getChildren().clear();
+            this.reset();
         }
     }
 
+    /**
+     * Reset and clear settings
+     *
+     */
+    private void reset() {
+        tagPane.getChildren().clear();
+        linePane.getChildren().clear();
+        brightness.setValue(50);
+    }
+    /**
+     * Convert an image to black and white
+     *
+     */
     public void setImageToMonochrome() {
         image.setImage(disjointImage.filter());
         brightness.valueProperty().addListener((ov, old_val, new_val) -> disjointImage.filter(new_val.doubleValue()));
     }
 
+    /**
+     * Count the birds in the set
+     */
     public void countBirds() {
         set.generateClusters();
         System.out.println(set.countSets());
     }
 
+    /**
+     * Tag the birds and draw rectangles around them
+     *
+     */
     public void tagBirds() {
+        image.setImage(disjointImage.recolorImage());
         tagPane.getChildren().clear();
         new Tagger(set, disjointImage.getWidth(), tagPane).tagImage();
     }
 
+    /**
+     * Analyse the formation fo the birds and
+     * draw the lines of best fit (if appropriate)
+     *
+     */
     public void analyseFormation() {
-
         FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth());
         ArrayList<Line> lines = flock.compareSegments();
-
         if(!lines.isEmpty()) {
             linePane.getChildren().addAll(lines);
             linePane.setMaxSize(disjointImage.getWidth(), disjointImage.getHeight());
             linePane.setClip(new Rectangle(disjointImage.getWidth(), disjointImage.getHeight()));
         }
-
     }
-
-    public void back() throws IOException {
-        SceneWrapper scene = Main.scenes.get(SceneName.LANDING);
-        stage.setScene(scene.loadScene(null, null));
-    }
-
-
-//    @FXML
-//    public void filter() throws IOException {
-//        SceneWrapper scene = Main.scenes.get(SceneName.TWO);
-//        stage.setScene(scene.loadScene(set, disjointImage));
-//    }
 
 }
