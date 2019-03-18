@@ -2,12 +2,16 @@ package io.swarm;
 
 import io.swarm.collections.DisjointImage;
 import io.swarm.collections.DisjointSet;
+import io.swarm.stats.BestFit;
+import io.swarm.stats.FlockRegression;
 import javafx.scene.image.Image;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -27,7 +31,7 @@ public class VFlockTest extends ApplicationTest {
     public void start(Stage stage) {
         Image original = new Image((new File("./src/main/resources/assets/Birds.jpg")).toURI().toString());
         set = new DisjointSet((int) original.getWidth(),(int) original.getHeight());
-        disjointImage = new DisjointImage(original, set);
+        disjointImage = new DisjointImage(original, set, null);
         disjointImage.filter();
         set.generateClusters();
         stage.show();
@@ -35,9 +39,9 @@ public class VFlockTest extends ApplicationTest {
 
     @Test
     public void imageWithNoFormationReturnsCluster() {
-//        FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth(), (int) disjointImage.getHeight());
-//        BestFit overall = flock.overAllRegression();
-//        assertFalse(overall.getRSquared() > 0.5);
+        FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth());
+        ArrayList<Line> lines = flock.compareSegments();
+        assertFalse(!lines.isEmpty());
     }
 
 }

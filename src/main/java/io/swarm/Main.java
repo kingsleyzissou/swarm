@@ -2,6 +2,7 @@ package io.swarm;
 
 import io.swarm.collections.DisjointImage;
 import io.swarm.collections.DisjointSet;
+import io.swarm.utilities.ImageInfo;
 import io.swarm.utilities.SceneName;
 import io.swarm.utilities.SceneWrapper;
 import javafx.application.Application;
@@ -29,12 +30,13 @@ public class Main extends Application{
         scenes = new HashMap<>();
         collectScenes(stage);
         stage.setTitle("Swarm");
-        File file = new File("./src/main/resources/assets/Birds.jpg");
-        Image img = new Image(file.toURI().toString(), 800, 600, true, false);
-        DisjointSet set = new DisjointSet(img.getWidth(), img.getHeight());
-        DisjointImage di = new DisjointImage(img, set);
-        SceneWrapper scene = scenes.get(SceneName.IMAGE);
-        stage.setScene(scene.loadScene(set, di));
+//        File file = new File("./src/main/resources/assets/Birds.jpg");
+//        Image img = new Image(file.toURI().toString(), 800, 600, true, false);
+//        ImageInfo info = new ImageInfo(file.getName(), file.length(), img.getWidth(), img.getHeight());
+//        DisjointSet set = new DisjointSet(img.getWidth(), img.getHeight());
+//        DisjointImage di = new DisjointImage(img, set, info);
+        SceneWrapper scene = scenes.get(SceneName.LANDING);
+        stage.setScene(scene.loadScene(null, null));
         stage.show();
     }
 

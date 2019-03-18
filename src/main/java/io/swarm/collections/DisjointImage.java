@@ -1,5 +1,6 @@
 package io.swarm.collections;
 
+import io.swarm.utilities.ImageInfo;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.PixelWriter;
@@ -15,14 +16,18 @@ public class DisjointImage {
     private double width;
     private Image original;
     private DisjointSet set;
+    private ImageInfo info;
     private WritableImage gray;
     private ArrayList<Color> colours = new ArrayList<>();
 
-    public DisjointImage(Image original, DisjointSet set) {
+
+
+    public DisjointImage(Image original, DisjointSet set, ImageInfo info) {
         this.height = original.getHeight();
         this.width = original.getWidth();
         this.original = original;
         this.set = set;
+        this.info = info;
         this.gray = new WritableImage((int) width, (int) height);
 
         Collections.addAll(colours,
@@ -124,15 +129,8 @@ public class DisjointImage {
     }
 
     public WritableImage recolorImage() {
-
         WritableImage rainbow = new WritableImage((int) original.getWidth(), (int) original.getHeight());
         PixelWriter wr = rainbow.getPixelWriter();
-
-//        for(int y = 0; y < original.getHeight(); y++) {
-//            for(int x = 0; y < original.getWidth(); x++) {
-//                int color =
-//            }
-//        }
 
         for (int i = 0; i < set.getSize() - 1; i++) {
             if(set.getValue(i) != -1) {
@@ -157,4 +155,12 @@ public class DisjointImage {
         return set;
     }
 
+    /**
+     * Getter method for the Image Info object
+     *
+     * @return image info object
+     */
+    public ImageInfo getInfo() {
+        return info;
+    }
 }

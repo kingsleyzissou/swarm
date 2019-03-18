@@ -44,7 +44,7 @@ public class ClusterAnalysis implements Serializable {
     public int weight(int observation) {
         int weight = 1;
         double z = normalise(observation);
-        if(z < -0.25 || z > 0.75) weight = 0;
+        if(z < -0.5 || z > 0.75) weight = 0;
         if(z < 3 && z > 0.75) weight = (int) (observation/mean());
         return weight;
     }

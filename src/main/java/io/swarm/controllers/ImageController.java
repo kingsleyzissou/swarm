@@ -1,13 +1,13 @@
 package io.swarm.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import io.swarm.collections.DisjointImage;
 import io.swarm.collections.DisjointSet;
-import io.swarm.Main;
-import io.swarm.utilities.SceneName;
 import io.swarm.utilities.*;
 import io.swarm.stats.FlockRegression;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -15,12 +15,10 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ImageController implements Switchable {
 
-    private Stage stage;
     private DisjointSet set;
     private DisjointImage disjointImage;
 
@@ -29,6 +27,8 @@ public class ImageController implements Switchable {
     @FXML Pane tagPane;
     @FXML Pane linePane;
     @FXML JFXSlider brightness;
+    @FXML JFXButton contrast, calculate, cube, chart, folder;
+    @FXML Label count, formation, name, dimensions, size;
 
     /**
      * Custom constructor used to provide the Controller with
@@ -40,15 +40,50 @@ public class ImageController implements Switchable {
      */
     @Override
     public void construct(Stage stage, DisjointSet set, DisjointImage disjointImage) {
-        this.stage = stage;
         this.set = set;
         this.disjointImage = disjointImage;
         image.setImage(disjointImage.getOriginalImage());
-//        setImageToMonochrome();
-//        countBirds();
-//        image.setImage(disjointImage.recolorImage());
-//        tagBirds();
-//        analyseFormation();
+        this.updateInfo(disjointImage.getInfo());
+        updateStep(0);
+    }
+
+    /**
+     * Disable buttons to prevent later steps from being actioned
+     * too soon
+     *
+     * @param step current step in the process
+     */
+    private void updateStep(int step) {
+        switch (step) {
+            case 0: calculate.setDisable(true);
+                    cube.setDisable(true);
+                    chart.setDisable(true);
+                    break;
+            case 1: calculate.setDisable(false);
+                    cube.setDisable(true);
+                    chart.setDisable(true);
+                    break;
+            case 2: cube.setDisable(false);
+                    chart.setDisable(true);
+                    break;
+            case 3: chart.setDisable(false);
+                    break;
+            default: calculate.setDisable(true);
+                    cube.setDisable(true);
+                    chart.setDisable(true);
+                    break;
+        }
+    }
+
+    /**
+     * Update the information to new photo info
+     *
+     * @param info image about the selected photo
+     */
+    private void updateInfo(ImageInfo info) {
+        name.setText(info.getName());
+        size.setText(info.getFileSize());
+        dimensions.setText(info.getDimensions());
     }
 
     /**
@@ -70,34 +105,50 @@ public class ImageController implements Switchable {
             disjointImage = newImage;
             set = newImage.getSet();
             image.setImage(newImage.getOriginalImage());
+            this.updateInfo(disjointImage.getInfo());
             this.reset();
         }
     }
 
     /**
-     * Reset and clear settings
+     * Reset all steps
      *
      */
     private void reset() {
+        clearPanes();
+        count.setText(" ");
+        formation.setText(" ");
+        brightness.setValue(50);
+        updateStep(0);
+    }
+
+    /**
+     * Clear panes of squares and lines
+     */
+    private void clearPanes() {
         tagPane.getChildren().clear();
         linePane.getChildren().clear();
-        brightness.setValue(50);
     }
+
     /**
      * Convert an image to black and white
      *
      */
     public void setImageToMonochrome() {
+        clearPanes();
         image.setImage(disjointImage.filter());
         brightness.valueProperty().addListener((ov, old_val, new_val) -> disjointImage.filter(new_val.doubleValue()));
+        updateStep(1);
     }
 
     /**
      * Count the birds in the set
      */
     public void countBirds() {
+        clearPanes();
         set.generateClusters();
-        System.out.println(set.countSets());
+        count.setText(new Integer(set.countSets()).toString());
+        updateStep(2);
     }
 
     /**
@@ -105,9 +156,10 @@ public class ImageController implements Switchable {
      *
      */
     public void tagBirds() {
-        image.setImage(disjointImage.recolorImage());
         tagPane.getChildren().clear();
+        image.setImage(disjointImage.recolorImage());
         new Tagger(set, disjointImage.getWidth(), tagPane).tagImage();
+        updateStep(3);
     }
 
     /**
@@ -118,11 +170,23 @@ public class ImageController implements Switchable {
     public void analyseFormation() {
         FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth());
         ArrayList<Line> lines = flock.compareSegments();
-        if(!lines.isEmpty()) {
-            linePane.getChildren().addAll(lines);
-            linePane.setMaxSize(disjointImage.getWidth(), disjointImage.getHeight());
-            linePane.setClip(new Rectangle(disjointImage.getWidth(), disjointImage.getHeight()));
+
+        System.out.println(flock.overAllRegression().getRSquared());
+
+        if(lines.isEmpty() && !flock.overAllRegression().isGoodFit()) {
+            formation.setText("No formation");
+            return;
         }
+
+        if(flock.overAllRegression().isGoodFit()) {
+            formation.setText("Linear formation");
+            return;
+        }
+
+        linePane.getChildren().addAll(lines);
+        linePane.setMaxSize(disjointImage.getWidth(), disjointImage.getHeight());
+        linePane.setClip(new Rectangle(disjointImage.getWidth(), disjointImage.getHeight()));
+        formation.setText("V-Formation");
     }
 
 }

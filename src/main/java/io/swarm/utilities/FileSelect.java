@@ -24,7 +24,8 @@ public class FileSelect {
             String fileToString = file.toURI().toString();
             Image img = new Image(fileToString, width, height,true, false);
             DisjointSet set = new DisjointSet((int) img.getWidth(), (int) img.getHeight());
-            return new DisjointImage(img, set);
+            ImageInfo info = new ImageInfo(file.getName(), file.length(), img.getWidth(), img.getHeight());
+            return new DisjointImage(img, set, info);
         }
         return null;
     }

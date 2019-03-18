@@ -60,7 +60,6 @@ public class BestFit implements Serializable {
     public double angleBetweenSlopes(BestFit comparisonLine) {
         if(!comparisonLine.isGoodFit()) return 0;
         double angle = angleBetweenSlopes(slope, comparisonLine.getSlope());
-        System.out.println(Math.toDegrees(angle));
         return (angle > Math.PI / 6 && angle < Math.PI/2) ? angle : -1;
     }
 
