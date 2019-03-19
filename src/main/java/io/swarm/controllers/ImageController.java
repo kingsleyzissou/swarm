@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import io.swarm.collections.DisjointImage;
 import io.swarm.collections.DisjointSet;
+import io.swarm.stats.BestFit;
 import io.swarm.utilities.*;
 import io.swarm.stats.FlockRegression;
 import javafx.fxml.FXML;
@@ -14,10 +15,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ImageController implements Switchable {
@@ -48,13 +45,6 @@ public class ImageController implements Switchable {
         image.setImage(disjointImage.getOriginalImage());
         this.updateInfo(disjointImage.getInfo());
         updateStep(0);
-    }
-
-    private void save() throws IOException {
-        FileOutputStream fos = new FileOutputStream("./src/main/resources/vset.dat");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(set);
-        oos.close();
     }
 
     /**
@@ -181,8 +171,6 @@ public class ImageController implements Switchable {
         FlockRegression flock = new FlockRegression(set, (int) disjointImage.getWidth());
         ArrayList<Line> lines = flock.compareSegments();
 
-        System.out.println(flock.overAllRegression().getRSquared());
-
         if(lines.isEmpty() && !flock.overAllRegression().isGoodFit()) {
             formation.setText("No formation");
             return;
@@ -190,13 +178,21 @@ public class ImageController implements Switchable {
 
         if(flock.overAllRegression().isGoodFit()) {
             formation.setText("Linear formation");
+            Line line = flock.overAllRegression().constructLine();
+            lines.clear();
+            lines.add(line);
+            addLines(lines);
             return;
         }
 
+        addLines(lines);
+        formation.setText("V-Formation");
+    }
+
+    public void addLines(ArrayList<Line> lines) {
         linePane.getChildren().addAll(lines);
         linePane.setMaxSize(disjointImage.getWidth(), disjointImage.getHeight());
         linePane.setClip(new Rectangle(disjointImage.getWidth(), disjointImage.getHeight()));
-        formation.setText("V-Formation");
     }
 
 }

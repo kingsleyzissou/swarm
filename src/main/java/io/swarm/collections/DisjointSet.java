@@ -196,14 +196,11 @@ public class DisjointSet implements Serializable {
         for(int index = 0; index < getSize(); index++) {
             int right = index + 1;
             int down = index +  width;
-            int diagonal = (index + 1) +  width;
             if(getValue(index) != -1) {
                 if(right < getSize() - 1 && getValue(right) != -1)
                     quickUnion(index, right);
                 if(down < getSize() - 1 && getValue(down) != -1)
                     quickUnion(index, down);
-//                if(diagonal < getSize() - 1 && getValue(diagonal) != -1)
-//                    quickUnion(index, diagonal);
             }
         }
     }

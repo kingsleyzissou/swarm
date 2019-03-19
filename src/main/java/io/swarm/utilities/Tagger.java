@@ -4,6 +4,7 @@ import io.swarm.collections.CoordinateSet;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import io.swarm.collections.DisjointSet;
 
@@ -131,7 +132,7 @@ public class Tagger {
     private Rectangle buildRectangle(int[] bounds, String clusterNumber) {
         addPadding(bounds);
         Rectangle r = new Rectangle(bounds[0], bounds[2], bounds[1] - bounds[0] , bounds[3] - bounds[2]);
-        r.setStroke(Color.RED);
+        r.setStroke(Paint.valueOf("#00b9d8"));
         r.setFill(Color.TRANSPARENT);
         Tooltip t = new Tooltip(clusterNumber);
         Tooltip.install(r, t);

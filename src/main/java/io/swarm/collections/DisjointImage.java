@@ -40,24 +40,6 @@ public class DisjointImage {
     }
 
     /**
-     * Convert individual pixel of an image to either black or white
-     *
-     * @param x coordinate of the pixel being manipulated
-     * @param y coordinate of the pixel being manipulated
-     * @param reader PixelReader object
-     * @param writer PixelWriter object
-     * @param threshold the brightness threshold for difference between black and white
-     * @return monochrome pixel
-     */
-    private Color toMonochrome(int x, int y, PixelReader reader, PixelWriter writer, double threshold) {
-        Color color = reader.getColor(x, y);
-        double lum = color.getBrightness() * 100;
-        Color newColor = lum <= threshold ? Color.BLACK : Color.WHITE;
-        writer.setColor(x,y, newColor);
-        return newColor;
-    }
-
-    /**
      * Filter an image to black and white
      *
      * @param threshold point used to differentiate limit of white and black
@@ -73,6 +55,24 @@ public class DisjointImage {
             }
         }
         return gray;
+    }
+
+    /**
+     * Convert individual pixel of an image to either black or white
+     *
+     * @param x coordinate of the pixel being manipulated
+     * @param y coordinate of the pixel being manipulated
+     * @param reader PixelReader object
+     * @param writer PixelWriter object
+     * @param threshold the brightness threshold for difference between black and white
+     * @return monochrome pixel
+     */
+    private Color toMonochrome(int x, int y, PixelReader reader, PixelWriter writer, double threshold) {
+        Color color = reader.getColor(x, y);
+        double lum = color.getBrightness() * 100;
+        Color newColor = lum <= threshold ? Color.BLACK : Color.WHITE;
+        writer.setColor(x,y, newColor);
+        return newColor;
     }
 
     /**
@@ -134,7 +134,8 @@ public class DisjointImage {
             if(set.getValue(i) != -1) {
                 int index = set.find(i);
                 int mod =  index % colours.size();
-                Color c = colours.get(mod);
+//                Color c = colours.get(mod);
+                Color c = Color.BLACK;
                 int x = CoordinateSet.getXCoordinate(i, (int) original.getWidth());
                 int y = CoordinateSet.getYCoordinate(i, (int) original.getWidth());
                 wr.setColor(x,y,c);

@@ -1,6 +1,7 @@
 package io.swarm.stats;
 
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 
 import java.io.Serializable;
@@ -58,7 +59,7 @@ public class BestFit implements Serializable {
      * @return angle between lines
      */
     public double angleBetweenSlopes(BestFit comparisonLine) {
-        if(!comparisonLine.isGoodFit()) return 0;
+        if(!isGoodFit() || !comparisonLine.isGoodFit()) return 0;
         double angle = angleBetweenSlopes(slope, comparisonLine.getSlope());
         return (angle > Math.PI / 6 && angle < Math.PI/2) ? angle : -1;
     }
@@ -79,7 +80,7 @@ public class BestFit implements Serializable {
      */
     public Line constructLine() {
         Line line = new Line(x1, slope * x1 + intercept, x2, (x2) * slope + intercept);
-        line.setStroke(Color.BLUE);
+        line.setStroke(Paint.valueOf("#d9006e"));
         return line;
     }
 

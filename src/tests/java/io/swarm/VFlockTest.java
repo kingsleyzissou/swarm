@@ -2,7 +2,6 @@ package io.swarm;
 
 import io.swarm.collections.DisjointImage;
 import io.swarm.collections.DisjointSet;
-import io.swarm.stats.BestFit;
 import io.swarm.stats.FlockRegression;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Line;
@@ -13,7 +12,6 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.io.File;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 
