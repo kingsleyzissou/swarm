@@ -15,11 +15,6 @@ import java.io.*;
 public class LandingController implements Switchable {
 
     private Stage stage;
-    private DisjointSet set;
-    private DisjointImage disjointImage;
-
-    @FXML private ImageView image;
-    @FXML private StackPane stack;
 
     /**
      * Custom constructor used to provide the Controller with
@@ -55,11 +50,5 @@ public class LandingController implements Switchable {
         System.exit(0);
     }
 
-//    private void save() throws IOException {
-//        FileOutputStream fos = new FileOutputStream("vset.dat");
-//        ObjectOutputStream oos = new ObjectOutputStream(fos);
-//        oos.writeObject(set);
-//        oos.close();
-//    }
 
 }

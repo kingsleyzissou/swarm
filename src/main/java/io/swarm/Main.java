@@ -30,13 +30,13 @@ public class Main extends Application{
         scenes = new HashMap<>();
         collectScenes(stage);
         stage.setTitle("Swarm");
-//        File file = new File("./src/main/resources/assets/Birds.jpg");
-//        Image img = new Image(file.toURI().toString(), 800, 600, true, false);
-//        ImageInfo info = new ImageInfo(file.getName(), file.length(), img.getWidth(), img.getHeight());
-//        DisjointSet set = new DisjointSet(img.getWidth(), img.getHeight());
-//        DisjointImage di = new DisjointImage(img, set, info);
-        SceneWrapper scene = scenes.get(SceneName.LANDING);
-        stage.setScene(scene.loadScene(null, null));
+        File file = new File("./src/main/resources/assets/Birds.jpg");
+        Image img = new Image(file.toURI().toString(), 800, 600, true, false);
+        ImageInfo info = new ImageInfo(file.getName(), file.length(), img.getWidth(), img.getHeight());
+        DisjointSet set = new DisjointSet(img.getWidth(), img.getHeight());
+        DisjointImage di = new DisjointImage(img, set, info);
+        SceneWrapper scene = scenes.get(SceneName.IMAGE);
+        stage.setScene(scene.loadScene(set, di));
         stage.show();
     }
 

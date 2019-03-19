@@ -15,6 +15,9 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ImageController implements Switchable {
@@ -45,6 +48,13 @@ public class ImageController implements Switchable {
         image.setImage(disjointImage.getOriginalImage());
         this.updateInfo(disjointImage.getInfo());
         updateStep(0);
+    }
+
+    private void save() throws IOException {
+        FileOutputStream fos = new FileOutputStream("./src/main/resources/vset.dat");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(set);
+        oos.close();
     }
 
     /**

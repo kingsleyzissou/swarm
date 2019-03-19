@@ -20,8 +20,6 @@ public class DisjointImage {
     private WritableImage gray;
     private ArrayList<Color> colours = new ArrayList<>();
 
-
-
     public DisjointImage(Image original, DisjointSet set, ImageInfo info) {
         this.height = original.getHeight();
         this.width = original.getWidth();

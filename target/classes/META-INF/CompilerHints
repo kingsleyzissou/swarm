@@ -3,7 +3,10 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,io/swarm/benchmarks/MyBenchmark$BenchmarkState.initialise
-inline,io/swarm/benchmarks/MyBenchmark.clusterCreationBenchmark
-inline,io/swarm/benchmarks/MyBenchmark.countBirds
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest$BenchmarkState.initialise
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest.a_filterImageBenchmark
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest.b_clusterCreationBenchmark
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest.c_countBirds
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest.d_analyseFormation
+inline,io/swarm/benchmarks/DisjointImageBenchmarkTest.e_serializeCluster
 inline,org/openjdk/jmh/infra/Blackhole.clearSinks

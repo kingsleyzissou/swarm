@@ -1,0 +1,4 @@
+package io.swarm.benchmarks.generated;
+public class DisjointImageBenchmarkTest_BenchmarkState_jmh extends DisjointImageBenchmarkTest_BenchmarkState_jmh_B3 {
+}
+
